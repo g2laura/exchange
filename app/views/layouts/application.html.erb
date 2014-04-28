@@ -12,6 +12,7 @@
 	  <%= link_to "Language Exchange", root_path, class: "navbar-brand" %>
 	  <ul class="nav navbar-nav">
 	    <li><%= link_to "Messages", messages_path %></li>
+		<li><%= link_to "Profile", profile_path(current_user.profile)%></li>
       </ul>
 	  <% unless user_signed_in? %>
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn navbar-right" %>
@@ -22,6 +23,13 @@
     </div>
   </nav>
   
+  <% unless notice.blank? %>
+    <div id="notice" class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= notice %>
+    </div>
+  <% end %>
+
   <div class="container">
     <%= yield %>
   </div>
