@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+	  <%= link_to "Language Exchange", root_path, class: "navbar-brand" %>
+	  <ul class="nav navbar-nav">
+	    <li><%= link_to "Messages", messages_path %></li>
+      </ul>
+	  <% unless user_signed_in? %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn navbar-right" %>
+		<%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn navbar-right" %>
+	  <% else %>
+	    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn navbar-right" %>
+	  <% end %>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
