@@ -15,3 +15,5 @@
 /log/*.log
 /tmp
 /public
+Guardfile
+rbenv-gemsets
