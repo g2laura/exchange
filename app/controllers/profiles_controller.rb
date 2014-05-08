@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile
+  before_action :authenticate_user!
 
   # GET /profiles/1
   # GET /profiles/1.json

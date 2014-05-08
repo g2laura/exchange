@@ -7,13 +7,5 @@
 
 <p>
   <strong>Sender:</strong>
-  <%= @message.sender %>
+  <%= @message.sender.name %>
 </p>
-
-<p>
-  <strong>Recipient:</strong>
-  <%= @message.recipient %>
-</p>
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>

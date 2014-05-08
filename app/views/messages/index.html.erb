@@ -1,31 +1,30 @@
-<h1>Listing messages</h1>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#sent" data-toggle="tab">Sent</a></li>
+  <li><a href="#received" data-toggle="tab">Received</a></li>
+</ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>Sender</th>
-      <th>Recipient</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= message.content %></td>
-        <td><%= message.sender %></td>
-        <td><%= message.recipient %></td>
-        <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
-        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="sent">
+    <% @messages_sent.each do |message| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">To: <%= message.recipient.blank? ? "" : message.recipient.name %></div>
+        <div class="panel-body">
+          <%= message.content %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Message', new_message_path %>
+  </div>
+  <div class="tab-pane" id="received">
+    <% @messages_received.each do |message| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">From: <%= message.recipient.blank? ? "" : message.sender.name %></div>
+        <div class="panel-body">
+          <%= message.content %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
