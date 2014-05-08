@@ -31,3 +31,5 @@ group :test, :development do
   gem 'guard-rspec'
 end
 
+# Uploader
+gem 'carrierwave'
