@@ -1,0 +1,9 @@
+message1:
+  content: message1
+  sender_id: user1
+  recipient_id: user2
+
+message2:
+  content: message2
+  sender_id: user2
+  recipient_id: user1

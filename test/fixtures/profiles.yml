@@ -1,0 +1,15 @@
+profile1:
+  user: user1
+  name: Laura
+  native_language: Spanish
+  learning_language: English
+  description: Student
+
+profile2:
+  user: user2
+  name: Sasha
+  native_language: English
+  learning_language: Spanish
+  description: Student
+  image: http://hdwallimg.com/wp-content/uploads/2014/02/White-Dog-Running-Wallpaper-HD-1024x681.jpg
+
