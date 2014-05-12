@@ -33,3 +33,7 @@ end
 
 # Uploader
 gem 'carrierwave'
+
+group :test do
+  gem 'turn'
+end

@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   end
 
   def name
-    return self.profile.name.empty? ? self.email : self.profile.name
+    return self.profile.name.blank? ? self.email : self.profile.name
   end
 
   def self.all_except(user)
