@@ -5,4 +5,6 @@ class Message < ActiveRecord::Base
   scope :sent_by,     ->(user) { where(:sender => user)}
   scope :received_by, ->(user) { where(:recipient => user)}
 
+  validates :content, presence: true
+
 end

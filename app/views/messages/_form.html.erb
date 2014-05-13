@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, required: true %>
   </div>
   <%= f.hidden_field :recipient_id, value: params[:recipient_id] %>
 

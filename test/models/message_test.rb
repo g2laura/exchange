@@ -14,4 +14,9 @@ class MessageTest < ActiveSupport::TestCase
     Message.create(content: "test", sender: sender, recipient: receiver)
     assert_equal "test", Message.received_by(receiver).first.content, "return the message received for the user"
   end
+
+  test "should not save message without content" do
+    message = Message.new()
+    assert_not message.save, "can't save the message without content"
+  end
 end
